@@ -7,7 +7,7 @@ A CLI tool built in Rust to tailor autocomplete propmts for your command line as
 1. Clone the repository to your local machine. 
 
 2. 
-```
+```sh
 cd rustplete
 cargo build --release 
 ./target/release/rustplete
