@@ -1,4 +1,4 @@
-# Rustplete CLI Tool 
+# rustplete CLI Tool 
 
 ### Usage 
 
