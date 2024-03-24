@@ -1,4 +1,6 @@
-# rustplete CLI Tool 
+# rusty-notes CLI Tool 
+
+A basic project to function as a notetaking app for your terminal. 
 
 ### Usage 
 
