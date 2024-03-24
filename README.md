@@ -1,4 +1,4 @@
-# rusty-notes CLI Tool 
+# rusty-notes
 
 A basic project to function as a notetaking app for your terminal. 
 
