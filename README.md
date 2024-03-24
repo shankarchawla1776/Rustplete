@@ -12,4 +12,4 @@ cargo build --release
 ```
 
 #### Issues
-03-22-2024: There is an issue with the .gitignore file causing the the target folder to be displayed. Update: resolved 03-23-2024
+03-22-2024: There is an issue with the .gitignore file causing the the target folder to be displayed. Update: resolved 03-23-2024.
