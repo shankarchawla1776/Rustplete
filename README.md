@@ -8,9 +8,8 @@ A basic project to function as a notetaking app for your terminal.
 
 2. 
 ```sh
-cd rustplete
+cd rusty-notes/src
 cargo build --release 
-./target/release/rustplete
 ```
 
 #### Issues
