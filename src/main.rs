@@ -2,16 +2,19 @@ use rustyline::error::ReadlineError;
 use rustyline::Editor;
 use std::fs;
 use std::io::Write;
+use chrono::prelude::*;
 
 fn main() {
     let mut rl = Editor::<()>::new();
-    let mut file = std::fs::File::create("history.txt")
-        .expect("Unable to create .txt file");
-
+    let _history_file = std::fs::OpenOptions::new()
+        .append(true)
+        .create(true)
+        .open("history.txt")
+        .expect("Unable to open or create history.txt");
     println!("history.txt created in the current directory.");
 
-    file.write_all(b"")
-        .expect("Unable to write to file");
+    // file.write_all(b"")
+    //     .expect("Unable to write to file");
 
     if rl.load_history("history.txt").is_err() {
         println!("No previous history");
@@ -19,7 +22,7 @@ fn main() {
     loop {
         let readline = rl.readline(">> ");
         match readline {
-            Ok(line) => {
+            Ok(ref line) => {
                 rl.add_history_entry(line.as_str());
                 println!("Line: {}", line);
                 println!("Do you wish to add this note to your notebook? (y/n)");
@@ -31,7 +34,7 @@ fn main() {
                 let ans = ans.trim();
                 match ans {
                     "y" => {
-                        if let Err(e) = to_notes("history.txt", "notes.txt") {
+                        if let Err(e) = to_notes(line, "notes.txt") {
                             println!("Error {:?}", e)
                         }
                     }
@@ -60,10 +63,14 @@ fn main() {
     rl.save_history("history.txt").unwrap();
 }
 
-pub fn to_notes(history_file_path: &str, notes_file: &str) -> std::io::Result<()> {
-    let conts = fs::read_to_string(history_file_path)?;
-    let mut file = fs::File::create(notes_file)?;
-    file.write_all(conts.as_bytes())?;
+pub fn to_notes(line: &str, notes_file: &str) -> std::io::Result<()> {
+    let local: DateTime<Local> = Local::now();
+    let local_time = local.format("%Y-%m-%d %H:%M:%S").to_string();
+    let mut file = fs::OpenOptions::new()
+        .append(true)
+        .create(true)
+        .open(notes_file)?;
+    writeln!(file, "{}: {}", local_time, line)?;
     println!("Note saved to {}", notes_file);
     println!("Press CRTL-C to exit.");
     Ok(())
