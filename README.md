@@ -1,6 +1,6 @@
 # rusty-notes
 
-A basic project to function as a notetaking app for your terminal. 
+A project to function as a notetaking app for your terminal using rustyline and chrono. 
 
 ### Usage 
 
@@ -13,5 +13,5 @@ cargo build --release
 cargo run
 ```
 
-#### Issues
-03-22-2024: There is an issue with the .gitignore file causing the the target folder to be displayed. Update: resolved 03-23-2024.
+#### Example Usage
+<img width="869" alt="Screenshot 2024-03-26 at 11 13 36 AM" src="https://github.com/shankarchawla1776/rusty-notes/assets/139474458/5c97eef6-d53a-4a1b-8a26-9f9cfa01494b">
