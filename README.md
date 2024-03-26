@@ -8,8 +8,9 @@ A basic project to function as a notetaking app for your terminal.
 
 2. Navigate to main.rs and run the project
 ```sh
-cd rusty-notes/src
+cd rusty-notes
 cargo build --release 
+cargo run
 ```
 
 #### Issues
