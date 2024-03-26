@@ -13,5 +13,5 @@ cargo build --release
 cargo run
 ```
 
-#### Example Usage
+### Example Usage
 <img width="869" alt="Screenshot 2024-03-26 at 11 13 36 AM" src="https://github.com/shankarchawla1776/rusty-notes/assets/139474458/5c97eef6-d53a-4a1b-8a26-9f9cfa01494b">
