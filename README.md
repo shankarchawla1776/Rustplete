@@ -6,7 +6,7 @@ A project to function as a notetaking app for your terminal using rustyline and 
 
 1. Clone the repository to your local machine. 
 
-2. Navigate to main.rs and run the project
+2. Navigate to the project and run it with cargo. 
 ```sh
 cd rusty-notes
 cargo build --release 
