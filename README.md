@@ -4,13 +4,24 @@ A project to function as a notetaking app for your terminal using rustyline and 
 
 ### Usage 
 
-1. Clone the repository to your local machine. 
+1. Clone the repository to your local machine.
+```zsh
+git clone https://github.com/shankarchawla1776/rusty-notes.git
+```
 
 2. Navigate to the project and run it with cargo. 
 ```sh
 cd rusty-notes
 cargo build --release 
 cargo run
+```
+
+3. Optionally, you can add a quick-run function to your ```~/.zshrc``` or ```~/.bashrc``` file and source it. 
+```zsh
+function note() {
+    cd ~/rusty-notes
+    cargo run
+}
 ```
 
 ### Example Usage
